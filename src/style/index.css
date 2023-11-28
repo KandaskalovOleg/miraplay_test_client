@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'NeueMachina-R';
+  src: url(/fonts/NeueMachina-Regular.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NeueMachina-M';
+  src: url(/fonts/NeueMachina-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'NeueMachina-B';
+  src: url(/fonts/NeueMachina-Bold.ttf) format('truetype');
+}
+
+body {
+  font-family: 'NeueMachina-B', sans-serif;
+  cursor: url('/cursor/cursor.png'), auto;
+  color: #eaeaea;
+}

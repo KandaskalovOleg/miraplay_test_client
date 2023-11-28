@@ -1,0 +1,13 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0;
+  background-color: #181818;
+}
+
+button {
+  color: #eaeaea;
+}

@@ -1,0 +1,73 @@
+.registration-form {
+  margin: 0 auto;
+  width: 370px;
+
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 22px;
+  text-transform: uppercase;
+}
+
+.description {
+  font-family: 'NeueMachina-R', sans-serif;
+  color: #afafaf;
+  font-size: 14px;
+}
+
+.label {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.input {
+  background: #1c1c1c;
+  border: 1px solid #454545;
+  color: #eaeaea;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 18px 0;
+  padding: 25px;
+}
+
+.input:focus, .input:active {
+  border: 1px solid #3f9c14;
+}
+
+.button {
+  background: #3f9c14;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 20px 40px rgba(63,156,20,.3);
+  cursor: pointer;
+  font-size: 16px;
+  height: 70px;
+  transition: all .2s ease-in-out;
+  transition: background .3s ease-in-out;
+  width: 370px;
+}
+
+.button:active {
+  border: 1px solid #2b660f;
+  box-shadow: 0 20px 40px rgba(63,156,20,.4);
+}
+
+.button:disabled {
+  background: #2b660f;
+  border: 1px solid #3f9c14;
+  box-shadow: none;
+  color: #8fe866;
+}
+
+.eye-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 58px;
+}
