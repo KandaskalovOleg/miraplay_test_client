@@ -5,6 +5,7 @@ import { Login } from '../Login/Login';
 import { Registration } from '../Registration/Registration';
 import { observer } from "mobx-react-lite"
 import { Context } from '../../main';
+import Logo from '../../assets/logo.png';
 
 export const Header = observer(() => {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -45,7 +46,7 @@ export const Header = observer(() => {
       <div className='navigation'>
         <div className='navigation-wrapper'>
           <Link to='/' className="logo">
-            <img src="/logo.png" alt="" />
+            <img src={Logo} alt="logo" />
           </Link>
 
           <nav className='nav'>
