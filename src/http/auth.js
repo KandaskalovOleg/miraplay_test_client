@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API_AUTH_URL = 'http://localhost:5000/api';
+export const API_AUTH_URL = 'https://miraplay-test-server-6yrb.onrender.com/api';
 
 const $apiAuth = axios.create({
   withCredentials: true,

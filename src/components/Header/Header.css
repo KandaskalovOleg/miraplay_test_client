@@ -41,7 +41,7 @@
   color: #3f9c14;
 }
 
-.authorization {
+.authorization, .exit {
   display: flex;
   align-items: center;
   width: 56px;
@@ -52,11 +52,11 @@
   transition: all .3s ease-out;
 }
 
-.authorization:active {
+.authorization:active, .exit:active {
   transform: translateY(5px);
 }
 
-.authorization-button {
+.authorization-button, .exit-button {
   cursor: pointer;
   height: 100%;
   width: 100%;
@@ -64,6 +64,11 @@
   align-items: center;
   justify-content: center;
   margin: auto;
+}
+
+.exit-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .drawer-wrapper {

@@ -9,7 +9,7 @@ import { Games } from './components/Games/Games';
 export const Root = () => (
   <Router>
     <Routes>
-      <Route  path="/" element={<App />}>
+      <Route path="/" element={<App />}>
         <Route path="games" element={<Games />} />
       </Route>
     </Routes>

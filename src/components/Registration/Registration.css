@@ -71,3 +71,14 @@
   right: 15px;
   top: 58px;
 }
+
+.error-message {
+  opacity: 0%;
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.open {
+  opacity: 100%;
+}
