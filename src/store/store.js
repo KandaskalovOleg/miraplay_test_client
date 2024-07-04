@@ -1,7 +1,8 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, toJS } from "mobx";
 import AuthService from "../services/AuthService";
 import axios from "axios";
 import { API_AUTH_URL } from "../http/auth";
+import { API_GAMES_URL } from "../http/games";
 
 export default class Store {
   user = {};
@@ -10,7 +11,9 @@ export default class Store {
   errorMessageLogin = null;
   errorMessageReg = null;
   isActivated = false;
-  games = {};
+
+  games = [];
+  gamesListLength = 0;
 
   constructor() {
     makeAutoObservable(this);
@@ -38,6 +41,11 @@ export default class Store {
 
   setActivated(bool) {
     this.isActivated = bool;
+  }
+
+  setGames(data) {
+    this.games = toJS(data.games);
+    this.gamesListLength = data.gamesListLength;
   }
 
   async login(email, password) {
@@ -83,7 +91,7 @@ export default class Store {
       this.setAuth(false);
       this.setUser({});
     } catch(e) {
-      console.log(e.response?.data?.message);
+      // console.log(e.response?.data?.message);
     } finally {
       this.setLoading(false);
     }
@@ -101,9 +109,24 @@ export default class Store {
       this.setUser(response.data.user);
       this.setActivated(response.data.user.isActivated);
     } catch(e) {
-      console.log(e.response?.data?.message);
+      // console.log(e.response?.data?.message);
     } finally {
       this.setLoading(false);
+    }
+  }
+
+  async getGames() {
+    try {
+      const response = await axios.post(`${API_GAMES_URL}/games/by_page`, {
+        page: 1,
+        isFreshGamesFirst: true,
+        genre: 'FREE',
+        gamesToShow: 9,
+      });
+
+      this.setGames(response.data);
+    } catch (error) {
+      console.error('Error fetching games:', error);
     }
   }
 }
